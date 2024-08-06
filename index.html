@@ -466,7 +466,7 @@
 
 <body>
     <div class="achievementList container">
-        <div class="achievement row bg-dark border mb-1 pt-1 pb-1">
+        <div class="achievement row border mb-1 pt-1 pb-1">
             <div class="col-10">
                 <h4>Heading</h4>
                 <p class="description">Description</p>
@@ -477,6 +477,8 @@
     </div>
 
     <script>
+        const mode = true;
+
         function titleCase(str) {
             return str.toLowerCase().replace(/(?:^|\s)\w/g, function (match) {
                 return match.toUpperCase();
@@ -505,6 +507,7 @@
             const iconDiv = newAchievement.querySelector('.icon');
             const moduleName = document.createElement("span");
             const icon = document.createElement("img");
+            const colIcon = document.createElement("img");
 
             heading.innerHTML = element.Name;
             moduleName.classList.add("badge", "badge-pill", "badge-primary", "ml-2");
@@ -514,15 +517,29 @@
             
             // Image filename
             const img = newAchievement.querySelector('img');
-            iconFile = element['Name'].toLowerCase().replace(/[\\/:*?"'',.<>|]/g, "_").replaceAll(" ", "").slice(0, 8).concat(".jpg");
-            iconBwURI = "https://drew-usyd.github.io/deco2018-achievements/300bw/" + iconFile;
-            iconColorURI = "https://drew-usyd.github.io/deco2018-achievements/300px/" + iconFile;
-            icon.setAttribute("src", iconBwURI);
+            iconFile = element['Name'].toLowerCase().replace(/[\\/:*?"'',.<>|]/g, "").replaceAll(" ", "").slice(0, 8).concat(".jpg");
+            
+            bwIconURI = "https://drew-usyd.github.io/deco2018-achievements/300bw/" + iconFile;
+            colIconURI = "https://drew-usyd.github.io/deco2018-achievements/300px/" + iconFile;
+            
+            if(mode == true) {
+              iconURI = colIconURI;
+              bg = "bg-light";
+            }
+            else {
+              iconURI = bwIconURI;
+              bg = "bg-dark";
+            }
+
+            icon.setAttribute("src", iconURI);
             icon.setAttribute('alt', "Icon for " + element.Name);
-            icon.classList.add("img-thumbnail");
+            icon.classList.add("img-fluid");
+
             iconDiv.appendChild(icon);
             
             renameFiles += "mv '" + element['icon'].split("/")[1] + "' '" + iconFile + "'\n";
+
+            newAchievement.classList.add(bg);
 
             // Finalise
             achievementList.appendChild(newAchievement);
