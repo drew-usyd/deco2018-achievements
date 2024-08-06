@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        data = `[
+ {
+   "Name": "Going the extra mile",
+   "Achievement Description": "Complete an optional assessment task",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Complete any optional assessment",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Going_the_extra_mile._Carrying_paper_down_a_country_road._Image_made_from_Construction_paper.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Arc Reactor",
+   "Achievement Description": "Glowing material immissive",
+   "Course Location": "blender",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_man_with_a_glowing_circle_of_metal_on_his_chest._Holding_a_laptop_non-chalantly._Image_mad.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Lights Camera, Action!",
+   "Achievement Description": "Set up a light with an IES profile in Blender",
+   "Course Location": "blender",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Include description of lighting in blender module",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Studio_lights_a_cinema_camera_and_a_clapperboard_in_a_dark_box._Image_made_from_Constructio.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Straight to the fridge!",
+   "Achievement Description": "Showcase your materials created in Blender",
+   "Course Location": "blender",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Include a material showcase",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_person_patting_their_hand_on_a_glass_showcase_full_of_shiny_items._Image_made_from_Constru.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Yeah, Science!",
+   "Achievement Description": "Make your own material in Blender",
+   "Course Location": "blender",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Show the process for making the material in blender",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_person_making_a_blender_out_of_multiple_materials_including_wood_glass_and_metal._Image_ma.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Shiny, Shimmering, Splendid",
+   "Achievement Description": "Render an awesome scene",
+   "Course Location": "blender",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Complete the Blender module",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_very_shiny_glowing_shimmering_blender_full_of_computers._Image_made_from_Construction_pape.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Total control",
+   "Achievement Description": "Fully constrain your fusion design",
+   "Course Location": "3dp-fusion, laser-fusion",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "show fully constrained designs in fusion",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_youthful_engineer_adding_clamps_to_a_blueprint._Image_made_from_Construction_paper._47206.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Going Critical",
+   "Achievement Description": "Earn 100% on a critique assessment",
+   "Course Location": "crits",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Earn 100% on a critique assessment",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Well_-aktually-_giving_feedback_to_a_poster._Image_made_from_Construction_paper._76192.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "It all adds up",
+   "Achievement Description": "Get 10% for the in-class tasks",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "get 10% for the in-class tasks",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_student_fist-bumping_another_student_in_a_classroom._Image_made_from_Construction_paper._7.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Perfectionist",
+   "Achievement Description": "Get a perfect score on an assessment",
+   "Course Location": "course",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "100% on any submitted assessment",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_An_artist_standing_before_and_contemplating_the_perfection_that_they_have_created._Image_ma.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Sonic",
+   "Achievement Description": "Submitted an assessment 24 hours early",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Submitted an assessment 24 hours early",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_blue_hedgehog_spinning_into_a_clock_that_reads_12-00._Image_made_from_Construction_paper._.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Completionist",
+   "Achievement Description": "Earned every individual achievement",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Earned every individual achievement",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_student_catching_butterflies_with_a_net._Image_made_from_Construction_paper._50717.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Codebreaker",
+   "Achievement Description": "Unlock a class achievement",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Unlock a class achievement",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_class_of_students_working_together_for_great_success._Image_made_from_Construction_paper._.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "No plan survives contact with the enemy",
+   "Achievement Description": "Outline what you did when something went wrong",
+   "Course Location": "assessments",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Student identifies what they did based on something that failed",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_scientist_wearing_a_lab_coat_having_a_eurika_moment._The_object_behind_them_is_on_fire._Im.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Sisyphus",
+   "Achievement Description": "3D print/laser cut something twice",
+   "Course Location": "3dp-fusion, laser-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Show that work was repeated",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Two_identical_scientists_wearing_a_lab-coat_duplicated_in_front_of_a_identical_wooden_objec.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "MORE ENERGY",
+   "Achievement Description": "Flex your skills by making a flexible part",
+   "Course Location": "laser-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Used kerf bending",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_scientist_wearing_a_lab-coat_siting_behind_a_bendy_cut_wood_object._Image_made_from_Const.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Like a Glove",
+   "Achievement Description": "Fit your joints with near perfection",
+   "Course Location": "laser-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "show that joints fit together really well. ",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_scientist_wearing_a_lab-coat_putting_a_wooden_puzzle_together_with_nice_clean_joints._Ima.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Home Sweet Home",
+   "Achievement Description": "Nested your files nicely",
+   "Course Location": "laser-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "show nicely nested files in your assessment",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_scientist_wearing_a_lab-coat_holding_an_exact_copy_of_themselves_nested_into_infinity._I.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "PeW pEw",
+   "Achievement Description": "Made your box by firing your laser",
+   "Course Location": "laser-fusion",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Complete the laser-fusion module",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_scientist_wearing_a_lab-coat_firing_a_laser_at_wood._Image_made_from_Construction_paper._.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Spaghetti Western",
+   "Achievement Description": "Recovered from a failed 3d print",
+   "Course Location": "3dp-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Recovered from a failed 3d print",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_paper_chocolatier_who_is_buried_in_a_pile_of_chaotically_shaped_plastic._Image_made_from_C.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Like an onion",
+   "Achievement Description": "Successfully completed your 3d print",
+   "Course Location": "3dp-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "Successfully completed your 3d print",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_chocolatier_who_uses_a_3d_printer._Image_made_from_Construction_paper._39825.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Parametric Operator",
+   "Achievement Description": "You set your own parameters",
+   "Course Location": "3dp-fusion, laser-fusion",
+   "Marking": "Yes",
+   "Category": "individual",
+   "Achievement Criteria": "show parameters in assessment",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_paper_engineer_holding_a_ruler_and_calipers_in_front_of_a_blueprint._Image_made_from_Const.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Chocolatier",
+   "Achievement Description": "Made your own chocolate with love, and machines",
+   "Course Location": "3dp-fusion",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Complete 3DP-fusion module",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_chocolatier_who_makes_chocolate_with_love_and_by_machine._Image_made_from_Construction_pa.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "I endorse this message",
+   "Achievement Description": "Have your answer or post on Ed endorsed by a staff member",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Have your answer or post on Ed endorsed by a staff member",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_teacher_giving_their_student_a_thumbs-up_for_being_helpful_at_answering_questions._Image_m.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "<3",
+   "Achievement Description": "Receive a heart from another student on Ed",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Receive a heart from another student on Ed",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_student_who_has_received_recognition_(as_a_heart_shaped_badge)_for_helping_in_conversation.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Let's Make Some Noise",
+   "Achievement Description": "Post 5 comments on Ed",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Post 5 comments (replies) on Ed",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_student_who_is_helpfully_taking_part_in_many_different_conversations._Image_made_from_Cons.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Elementary, my dear Watson",
+   "Achievement Description": "Answer a question on Ed",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Answer public question on Ed",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Student_is_helpfully_answering_another_students_questions._Image_made_from_Construction_pape.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Neeeeeeeeerd",
+   "Achievement Description": "Arrive early for the first class",
+   "Course Location": "attendance",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "Arrive early for the first class",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_stereotypical_nerd_who_has_been_very_keen_to_arrive_early_for_their_first_class_of_the_ye.jpg",
+   "SRES UUID": "COL_FB17188D_508E_42FB_BDAA85CD8C5CA1B0"
+ },
+ {
+   "Name": "Couriser and couriser",
+   "Achievement Description": "Ask a question on Ed",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "post question on Ed in public",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Student_is_very_good_at_asking_questions._Image_made_from_Construction_paper._39825.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Hundo",
+   "Achievement Description": "100% Attendance",
+   "Course Location": "attendance",
+   "Marking": "No",
+   "Category": "individual",
+   "Achievement Criteria": "100% attendance (exc. explained absences)",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_student_who_has_achieved_100-_attendance_for_classes._She_are_very_proud_of_themselves._Im.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "A hero. Not the hero we deserved, but the hero we needed. Nothing less than a knight.",
+   "Achievement Description": "Earn 100% in the course",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "Someone gets a perfect score",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_An_anime-style_character_celebrating_his_perfect_victory_with_cake._Image_made_from_Construc.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Elite",
+   "Achievement Description": "Earn over 1337 cumulative points",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "Class earns over 1337 marks",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_An_anime-style_character_pointing_his_finger_in_a_sassy_fashion._Image_made_from_Constructio.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Over 9000!",
+   "Achievement Description": "Earn over 9000 cumulative points",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "Class earns over 9000 marks",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_An_anime-style_character_crushing_a_3d_printing_object._Image_made_from_Construction_paper._.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Snowflake",
+   "Achievement Description": "One person in the class is the only person to choose one brand",
+   "Course Location": "course",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "One person in the class is the only person to select any brand",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_unique_snowflake_being_held_by_a_mysterious_person._Image_made_from_Construction_paper._47.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Chit Chat",
+   "Achievement Description": "Post a social comment on Ed",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "Students initiating a social comment on Ed",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Chit_chat._People_talking_together_taking_part_in_a_social_conversations._Image_made_from_Co.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Count me in!",
+   "Achievement Description": "5 Students comment on one discussion thread in Ed",
+   "Course Location": "ed",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "5 separate students comment on one discussion thread in Ed",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Five_students_crowded_together_taking_part_in_a_conversations._Image_made_from_Construction_.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "We are the champions",
+   "Achievement Description": "Submit the final assessment",
+   "Course Location": "assessments",
+   "Marking": "No",
+   "Category": "class",
+   "Achievement Criteria": "First student to submit “unlocks” this",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_Running_across_the_checked_flag_finish_line_with_a_bundle_of_papers._Image_made_from_Constru.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Thinking outside the box",
+   "Achievement Description": "Someone in your tutorial chose a product category we didn’t think of",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "Any students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_mystery_box._A_person_standing_with_their_face_towards_the_camera_shrugging._Image_made_fr.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "I feel pretty",
+   "Achievement Description": "Someone in your tutorial chooses a cosmetic brand",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "Any students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_cosmetics_wearing_person._Standing_with_a_ring_light_with_their_face_towards_the_camera._I.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Faster, higher, stronger",
+   "Achievement Description": "Someone in your tutorial chooses an athletic/sports brand",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "Any students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_An_athletic_person_wearing_athletic_clothing_in_an_athletic_pose_facing_towards_the_camera._.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Home Improvements",
+   "Achievement Description": "Someone in your tutorial chooses a homewares brand",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "All students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_DIY_home_renovator_couple._Standing_in_a_kitchen_construction_with_their_face_towards_the_.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Unicorn",
+   "Achievement Description": "Someone in your tutorial chooses a brand that is the only one in the product category",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "Any students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_hand-folded_origami_unicorn_on_a_desk._Image_made_from_Construction_paper._45709.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Gear Head",
+   "Achievement Description": "Someone in your tutorial chooses a automotive brand",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "All students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_An_automobile_loving_character_in_silhouette_with_gears_for_their_head._Standing_with_their_.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Geek Squad",
+   "Achievement Description": "Someone in your tutorial chooses a technology brand",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "All students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_technology_loving_character_in_silhouette._Standing_with_their_face_towards_the_camera._Im.jpg",
+   "SRES UUID": ""
+ },
+ {
+   "Name": "Fashionista",
+   "Achievement Description": "Someone in your tutorial chooses a fashion brand",
+   "Course Location": "modules",
+   "Marking": "No",
+   "Category": "module",
+   "Achievement Criteria": "All students awarded",
+   "icon": "DECO2018%20Achievements%20fcb528fb090a4753b528a8d5d8489dbc/Firefly_A_very_fashionably_dressed_character_in_silhouette_._Image_made_from_Construction_paper._761.jpg",
+   "SRES UUID": ""
+ }
+]`;
+        data = JSON.parse(data);
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="achievementList container">
+        <div class="achievement row bg-dark border mb-1 pt-1 pb-1">
+            <div class="col-10">
+                <h4>Heading</h4>
+                <p class="description">Description</p>
+            </div>
+            <div class="col-2 icon">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function titleCase(str) {
+            return str.toLowerCase().replace(/(?:^|\s)\w/g, function (match) {
+                return match.toUpperCase();
+            });
+        }
+        const achievementList = document.querySelector('.achievementList');
+        const achievement = document.querySelector(".achievement");
+
+        data.sort((a, b) => (a.Category > b.Category ? 1 : -1));
+
+        let lastCategory = "";
+
+        renameFiles = "";
+
+        data.forEach(element => {
+
+            if (lastCategory != element.Category) {
+                const categoryHeading = document.createElement("h2");
+                categoryHeading.innerText = titleCase(element.Category);
+                achievementList.appendChild(categoryHeading);
+            }
+
+            const newAchievement = achievement.cloneNode(true);
+            const heading = newAchievement.querySelector('h4')
+            const description = newAchievement.querySelector('.description')
+            const iconDiv = newAchievement.querySelector('.icon');
+            const moduleName = document.createElement("span");
+            const icon = document.createElement("img");
+
+            heading.innerHTML = element.Name;
+            moduleName.classList.add("badge", "badge-pill", "badge-primary", "ml-2");
+            moduleName.innerHTML = titleCase(element['Course Location']);
+            heading.appendChild(moduleName);
+            description.innerHTML = element['Achievement Description'];
+            
+            // Image filename
+            const img = newAchievement.querySelector('img');
+            iconFile = element['Name'].toLowerCase().replace(/[\\/:*?"'',.<>|]/g, "_").replaceAll(" ", "").slice(0, 8).concat(".jpg");
+            iconBwURI = "https://drew-usyd.github.io/deco2018-achievements/300bw/" + iconFile;
+            iconColorURI = "https://drew-usyd.github.io/deco2018-achievements/300px/" + iconFile;
+            icon.setAttribute("src", iconBwURI);
+            icon.setAttribute('alt', "Icon for " + element.Name);
+            icon.classList.add("img-thumbnail");
+            iconDiv.appendChild(icon);
+            
+            renameFiles += "mv '" + element['icon'].split("/")[1] + "' '" + iconFile + "'\n";
+
+            // Finalise
+            achievementList.appendChild(newAchievement);
+
+            lastCategory = element.Category;
+        });
+
+        achievement.remove();
+    </script>
+
+</body>
+
+</html>
