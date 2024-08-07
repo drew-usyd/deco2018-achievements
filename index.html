@@ -5,6 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .row:hover {
+      border: 2px solid red;
+      margin: 10px 0;
+    }
+
+    .achievement:hover {
+      border: 2px solid blue !important;
+    }
+  </style>
   <script>
     data = `[
  {
@@ -467,13 +477,6 @@
 <body>
   <div class="container-fluid">
     <div class="achievementList">
-      <div class="achievement row border mb-1 pt-1 pb-1">
-        <div class="col-sm-12 col-md-2 pt-1 text-center icon"></div>
-        <div class="col-sm-12 col-md-10 pt-1">
-          <h4>Heading</h4>
-          <p class="description">Description</p>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -486,70 +489,121 @@
       });
     }
     const achievementList = document.querySelector('.achievementList');
-    const achievement = document.querySelector(".achievement");
 
+    // Sort the JSON data to get the categories grouped properly
     data.sort((a, b) => (a.Category > b.Category ? 1 : -1));
 
     let lastCategory = "";
-
     renameFiles = "";
 
+    // Build the top-level headers for the modules
     data.forEach(element => {
 
       if (lastCategory != element.Category) {
+        const categoryRow = document.createElement("div");
+        categoryRow.classList.add('row');
+
         const categoryHeading = document.createElement("h2");
         categoryHeading.innerText = titleCase(element.Category);
-        achievementList.appendChild(categoryHeading);
+
+        achievementList.appendChild(categoryRow);
+        categoryRow.appendChild(categoryHeading);
       }
 
-      const newAchievement = achievement.cloneNode(true);
-      const heading = newAchievement.querySelector('h4')
-      const description = newAchievement.querySelector('.description')
-      const iconDiv = newAchievement.querySelector('.icon');
-      const moduleName = document.createElement("span");
-      const icon = document.createElement("img");
-      const colIcon = document.createElement("img");
+      // Create the new achievement card
+      const achievementRow = document.createElement('div');
+      achievementRow.classList.add('row');
 
-      heading.innerHTML = element.Name;
+      const falseAchievementWrapper = document.createElement('div');
+      falseAchievementWrapper.classList.add('col-6');
+
+      const falseAchievement = document.createElement('div');
+      falseAchievement.classList.add("achievement", "row", "border", "mb-1", "pt-1", "pb-1");
+
+      // Add a wrapper div for the image
+      const iconDiv = document.createElement('div');
+      falseAchievement.appendChild(iconDiv);
+      iconDiv.classList.add("col-sm-12", "col-md-2", "pt-1", "text-center");
+
+      // Add the heading
+      const textDiv = document.createElement("div");
+      falseAchievement.appendChild(textDiv);
+      textDiv.classList.add("col-sm-12", "col-md-10", "pt-1");
+
+      const heading = document.createElement("h4");
+      textDiv.appendChild(heading);
+
+      // Add the module badge to the header
+      const moduleName = document.createElement("span");
       moduleName.classList.add("badge", "badge-pill", "badge-primary", "ml-2");
-      moduleName.innerHTML = titleCase(element['Course Location']);
+      moduleName.innerText = titleCase(element['Course Location']);
+      heading.innerText = element.Name;
       heading.appendChild(moduleName);
-      description.innerHTML = element['Achievement Description'];
+
+      // Add the description
+      const description = document.createElement('p');
+      textDiv.appendChild(description);
+      description.classList.add('description');
+      description.innerText = element['Achievement Description'];
+
+      // Add the icon (placeholder)
+      const icon = document.createElement("img");
+      iconDiv.appendChild(icon);
+      icon.setAttribute("style", "display: block !important; max-width: 150px; margin: 0 auto; height: auto; width: 100%;");
 
       // Image filename
-      const img = newAchievement.querySelector('img');
       iconFile = element['Name'].toLowerCase().replace(/[\\/:*?"'',.<>|]/g, "").replaceAll(" ", "").slice(0, 8).concat(".jpg");
 
       bwIconURI = "https://drew-usyd.github.io/deco2018-achievements/300bw/" + iconFile;
+      bwBgClass = "bg-secondary";
+
       colIconURI = "https://drew-usyd.github.io/deco2018-achievements/300px/" + iconFile;
+      colBgClass = "bg-light";
 
-      if (mode == true) {
-        iconURI = colIconURI;
-        bg = "bg-light";
-      }
-      else {
-        iconURI = bwIconURI;
-        bg = "bg-secondary";
-      }
-
-      icon.setAttribute("src", iconURI);
+      icon.setAttribute("src", bwIconURI);
       icon.setAttribute('alt', "Icon for " + element.Name);
-      icon.setAttribute("style", "display: block !important; max-width: 150px; margin: 0 auto; height: auto; width: 100%;");
+      // Hack to get around SRES disallowing classes on IMG elements.
       // icon.classList.add("img-fluid", "d-block", "mx-auto");
 
-      iconDiv.appendChild(icon);
+      // Clone the false achievement to allow the tweaks to be made for the true state.
+      falseAchievement.classList.add(bwBgClass);
+      const trueAchievement = falseAchievement.cloneNode(true);
 
+      // Override the true achievement markup
+      trueAchievement.classList.remove(bwBgClass);
+      trueAchievement.classList.add(colBgClass);
+      trueAchievement.querySelector("img").setAttribute("src", colIconURI);
+
+      // Help to rename the files from the JSON to match the generated IMG tags.
       renameFiles += "mv '" + element['icon'].split("/")[1] + "' '" + iconFile + "'\n";
 
-      newAchievement.classList.add(bg);
+      // Set the background colour
 
-      // Finalise
-      achievementList.appendChild(newAchievement);
+      // Finalise everything
+      const trueAchievementWrapper = falseAchievementWrapper.cloneNode(true);
+
+      achievementList.appendChild(achievementRow);
+      falseAchievementWrapper.appendChild(falseAchievement);
+      achievementRow.appendChild(falseAchievementWrapper);
+
+      trueAchievementWrapper.appendChild(trueAchievement);
+      achievementRow.appendChild(trueAchievementWrapper);
 
       lastCategory = element.Category;
     });
 
-    achievement.remove();
+    // Once everything is created add an event listener to capture clicks
+    // Select all elements with the class 'achievement'
+    const achievements = document.querySelectorAll('.achievement');
+
+    // Loop through each element and bind an event
+    achievements.forEach(achievement => {
+      achievement.addEventListener('click', () => {
+        // Convert the achievements DOM into an HTML string
+        const html = achievement.outerHTML;
+        navigator.clipboard.writeText(html);
+      });
+    });
   </script>
 
 </body>
