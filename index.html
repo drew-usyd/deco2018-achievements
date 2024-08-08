@@ -8,7 +8,6 @@
   <style>
     .row:hover {
       border: 2px solid red;
-      margin: 10px 0;
     }
 
     .achievement:hover {
@@ -29,7 +28,7 @@
  },
  {
    "Name": "Arc Reactor",
-   "Achievement Description": "Glowing material immissive",
+   "Achievement Description": "Glowing material emissive",
    "Course Location": "blender",
    "Marking": "Yes",
    "Category": "individual",
@@ -540,12 +539,6 @@
       heading.innerText = element.Name;
       heading.appendChild(moduleName);
 
-      // Add the description
-      const description = document.createElement('p');
-      textDiv.appendChild(description);
-      description.classList.add('description');
-      description.innerText = element['Achievement Description'];
-
       // Add the icon (placeholder)
       const icon = document.createElement("img");
       iconDiv.appendChild(icon);
@@ -573,6 +566,13 @@
       trueAchievement.classList.remove(bwBgClass);
       trueAchievement.classList.add(colBgClass);
       trueAchievement.querySelector("img").setAttribute("src", colIconURI);
+
+      // Add the description to true cards only
+      const description = document.createElement('p');
+      trueTextDiv = trueAchievement.querySelector("div.col-md-10");
+      trueTextDiv.appendChild(description);
+      description.classList.add('description');
+      description.innerText = element['Achievement Description'];
 
       // Help to rename the files from the JSON to match the generated IMG tags.
       renameFiles += "mv '" + element['icon'].split("/")[1] + "' '" + iconFile + "'\n";
